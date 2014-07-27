@@ -7,21 +7,21 @@ void bar::setup(){
     //One Rect for background
     rectPos.set(ofGetWidth() / 2, ofGetHeight() / 2);
     
-    vel.set(0.75f, 1.0f);
     
-
+    alpha = 0;
 }
 
 //--------------------------------------------------------------
-void bar::update(){
+void bar::update(float rotateSpeed){
     
 
-    rotate += vel;
-
+    rotate.x += rotateSpeed;
+    rotate.y += rotateSpeed;
     
     noise += 0.05f;
     sendNoise = 255.0 * ofNoise(noise);
     
+    //alpha -= 20.0;
 }
 
 
@@ -49,14 +49,24 @@ void bar::draw(){
                 ofSetColor(250, 0, 90);
 
             } else {
-                ofSetColor(ofColor::white);
+                ofSetColor(ofColor::white, alpha);
             }
-            
+            ofFill();
         ofTranslate(rectPos.x - 60, rectPos.y - 50);   
         ofTranslate(i, j);   
         ofRotateX(rotate.x + i * PI / 2);
         ofRotateY(rotate.y + i * PI / 2);
         ofCircle(0, 0, 10);
+            
+            
+            if (i == 120 && j == 60) {
+                ofSetColor(250, 0, 90);
+                
+            } else {
+                ofSetColor(ofColor::white);
+            }
+            ofNoFill();
+            ofCircle(0, 0, 10);
             
             //cout << "i : " << i << endl;
             //cout << "j : " << j << endl;
@@ -94,38 +104,4 @@ void bar::keyReleased(int key){
     
 }
 
-//--------------------------------------------------------------
-void bar::mouseMoved(int x, int y ){
-    
-    
-}
 
-//--------------------------------------------------------------
-void bar::mouseDragged(int x, int y, int button){
-    
-}
-
-//--------------------------------------------------------------
-void bar::mousePressed(int x, int y, int button){
-    
-}
-
-//--------------------------------------------------------------
-void bar::mouseReleased(int x, int y, int button){
-    
-}
-
-//--------------------------------------------------------------
-void bar::windowResized(int w, int h){
-    
-}
-
-//--------------------------------------------------------------
-void bar::gotMessage(ofMessage msg){
-    
-}
-
-//--------------------------------------------------------------
-void bar::dragEvent(ofDragInfo dragInfo){ 
-    
-}

@@ -7,7 +7,7 @@ void fftData::setup(){
     const int numBands = 256; //Number of bands in spectrum
     spectrum.resize(numBands);
 
-    sound.loadSound( "songs/ep.aif" );
+    sound.loadSound( "ep.mp3" );
     sound.setLoop( true );
     sound.play();
     

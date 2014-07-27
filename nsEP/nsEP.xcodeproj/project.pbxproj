@@ -102,8 +102,6 @@
 		E4EB6923138AFD0F00A09F29 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
 		E693D0AD196F3A2500B1602B /* fftData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fftData.cpp; sourceTree = "<group>"; };
 		E693D0AE196F3A2500B1602B /* fftData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fftData.h; sourceTree = "<group>"; };
-		E693D0B1196F48F700B1602B /* test.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = test.wav; path = bin/data/songs/test.wav; sourceTree = "<group>"; };
-		E693D0B2196F48F700B1602B /* test2.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = test2.aif; path = bin/data/songs/test2.aif; sourceTree = "<group>"; };
 		E7E077E415D3B63C0020DFD4 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
 		E7E077E715D3B6510020DFD4 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
 		E7F985F515E0DE99003869B5 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = /System/Library/Frameworks/Accelerate.framework; sourceTree = "<absolute>"; };
@@ -196,7 +194,6 @@
 			children = (
 				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
 				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
-				E693D0B0196F48CC00B1602B /* songs */,
 				E4B69E1C0A3A1BDC003C02F2 /* src */,
 				E4EEC9E9138DF44700A80321 /* openFrameworks */,
 				BB4B014C10F69532006C3DED /* addons */,
@@ -252,15 +249,6 @@
 				E693D0AE196F3A2500B1602B /* fftData.h */,
 			);
 			name = fftData;
-			sourceTree = "<group>";
-		};
-		E693D0B0196F48CC00B1602B /* songs */ = {
-			isa = PBXGroup;
-			children = (
-				E693D0B1196F48F700B1602B /* test.wav */,
-				E693D0B2196F48F700B1602B /* test2.aif */,
-			);
-			name = songs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

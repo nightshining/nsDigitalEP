@@ -6,7 +6,7 @@ class cube {
     
 public:
     void setup();
-    void update();
+    void update(float rotateSpeed);
     void draw();
     
     void keyPressed(int key);
@@ -21,16 +21,7 @@ public:
     
     ofPoint rectPos;
     ofColor alternateColor;
-    vector<ofPoint> circlePoints;
-    vector<int> cirSize;
-    
-    float noise, sendNoise;
-    void drawCube();
-    ofMesh mesh;
-    ofEasyCam cam;
-    
-    
-    float diffFloating(float verticalAmt, float speed);
-    int randomPlay;
-
+    void drawCube(ofColor c, float scale);
+    int alpha;
+    float rotate;
 };

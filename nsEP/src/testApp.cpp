@@ -17,7 +17,7 @@ void testApp::setup(){
     }
     
     
-    
+    font.loadFont("font/codeFont.otf", 48);
     
 }
 
@@ -26,9 +26,6 @@ void testApp::update(){
 
     tri.update();
     r.update();
-    b.update();
-    sculpt.update();
-    c.update();
     
     
     audioReactiveData.update();
@@ -53,14 +50,36 @@ void testApp::update(){
     r.vel.x = audioReactiveData.sendValue1;
     r.vel.y = audioReactiveData.sendValue2;
     
+    ///Bar Circles///
+    b.update(ofMap(audioReactiveData.sendValue1, 0.0, 1.0, 0.0f, 2.0f));
+    b.alpha = ofMap(audioReactiveData.sendValue1, 0.0, 1.0, -200, 255);
     
+    
+    ///Rectangles
+    
+    sculpt.update(ofMap(audioReactiveData.sendValue1, 0.0, 1.0, 0.0f, 4.0f));
+    sculpt.alpha = ofMap(audioReactiveData.sendValue1, 0.0, 1.0, 0, 255);
+ 
+    
+    ///Cube
+    c.update(ofMap(audioReactiveData.sendValue1, 0.0, 1.0, 0.0f, 4.0f));
+    c.alpha = ofMap(audioReactiveData.sendValue1, 0.0, 1.0, -100, 255);
 
-    
-    
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
+    
+    ///Title Text///
+    ofPushStyle(); 
+    ofPushMatrix(); 
+    ofSetColor(ofColor::black);
+    ofNoFill();
+    font.drawString("ns", ofGetWidth() * 0.03, ofGetHeight() * 0.15);
+    ofPopMatrix();
+    ofPopStyle();
+    
+    ///Draw Objects///
     
     /*
     ofPushMatrix();
@@ -76,7 +95,6 @@ void testApp::draw(){
     tri.draw();
     ofPopMatrix();
      
-    */
     
     ofPushMatrix();
     ofTranslate(pos.x, pos.y);
@@ -84,25 +102,28 @@ void testApp::draw(){
     r.draw();
     ofPopMatrix();
     
-    /*
+
     ofPushMatrix();
     ofTranslate(pos.x, pos.y + 200);
     ofScale(size.x, size.y);
     b.draw();
     ofPopMatrix();
      
+    
     ofPushMatrix();
     ofTranslate(pos.x + 250, pos.y + 200);
     ofScale(size.x, size.y);
     sculpt.draw();
     ofPopMatrix();
     
+     */
+    
     ofPushMatrix();
-    ofTranslate(pos.x + 500, pos.y + 200);
+    ofTranslate(pos.x, pos.y);
     ofScale(size.x, size.y);
     c.draw();
     ofPopMatrix();
-     */
+     
     
     
     //Sound Utils

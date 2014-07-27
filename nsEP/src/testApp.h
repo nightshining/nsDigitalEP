@@ -30,13 +30,16 @@ class testApp : public ofBaseApp{
 		
     circles cir;
     triangle tri;
-    ring r;
-    bar b;
-    sculpture sculpt;
-    cube c;
+    ring r; //use with sequencer type song
+    bar b; //use with bass arp sounding song
+    sculpture sculpt; //use with tribal sounding
+    cube c; //use with last song
     
     ofVec2f size, pos;
     
     
     fftData audioReactiveData;
+    
+    //Text
+    ofTrueTypeFont font;
 };

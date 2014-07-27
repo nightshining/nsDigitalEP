@@ -6,18 +6,16 @@ void sculpture::setup(){
     
     //One Rect for background
     rectPos.set(ofGetWidth() / 2, ofGetHeight() / 2);
-    
-    vel.set(0.75f, 1.0f);
-    
+        
     
 }
 
 //--------------------------------------------------------------
-void sculpture::update(){
+void sculpture::update(float rotateSpeed){
     
     
-    rotate += vel;
-    
+    rotate.x += rotateSpeed;
+    rotate.y += rotateSpeed;
     
     noise += 0.05f;
     sendNoise = 255.0 * ofNoise(noise);
@@ -51,7 +49,7 @@ void sculpture::draw(){
                     
                     if (i == 50) {
                         
-                        ofSetColor(250, 0, 90);
+                        ofSetColor(250, 0, 90, alpha);
 
                     } else {
                     
@@ -96,38 +94,4 @@ void sculpture::keyReleased(int key){
     
 }
 
-//--------------------------------------------------------------
-void sculpture::mouseMoved(int x, int y ){
-    
-    
-}
 
-//--------------------------------------------------------------
-void sculpture::mouseDragged(int x, int y, int button){
-    
-}
-
-//--------------------------------------------------------------
-void sculpture::mousePressed(int x, int y, int button){
-    
-}
-
-//--------------------------------------------------------------
-void sculpture::mouseReleased(int x, int y, int button){
-    
-}
-
-//--------------------------------------------------------------
-void sculpture::windowResized(int w, int h){
-    
-}
-
-//--------------------------------------------------------------
-void sculpture::gotMessage(ofMessage msg){
-    
-}
-
-//--------------------------------------------------------------
-void sculpture::dragEvent(ofDragInfo dragInfo){ 
-    
-}
