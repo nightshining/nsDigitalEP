@@ -62,7 +62,7 @@ void testApp::update(){
  
     
     ///Cube
-    c.update(ofMap(audioReactiveData.sendValue1, 0.0, 1.0, 0.0f, 4.0f));
+    c.update(ofMap(audioReactiveData.sendValue1, 0.0, 1.0, 0.0f, 4.0f), ofMap(audioReactiveData.sendValue1, 0.0, 1.0, 0.0f, 4.0f), 10.0);
     c.alpha = ofMap(audioReactiveData.sendValue1, 0.0, 1.0, -100, 255);
 
 }
@@ -79,9 +79,19 @@ void testApp::draw(){
     ofPopMatrix();
     ofPopStyle();
     
+    ///Time and Song Titles
+    ofPushStyle(); 
+    ofPushMatrix(); 
+    ofSetColor(ofColor::black);
+    ofNoFill();
+    font.drawString(ofToString(audioReactiveData.sound.getPositionMS()), ofGetWidth() * 0.10, ofGetHeight() * 0.15);
+    ofPopMatrix();
+    ofPopStyle();
+    
     ///Draw Objects///
     
     /*
+    
     ofPushMatrix();
     ofTranslate(pos.x, pos.y);
     ofScale(size.x, size.y);
@@ -97,7 +107,7 @@ void testApp::draw(){
      
     
     ofPushMatrix();
-    ofTranslate(pos.x, pos.y);
+    ofTranslate(pos.x + 500, pos.y);
     ofScale(size.x, size.y);
     r.draw();
     ofPopMatrix();
@@ -111,15 +121,14 @@ void testApp::draw(){
      
     
     ofPushMatrix();
-    ofTranslate(pos.x + 250, pos.y + 200);
+    ofTranslate(pos.x, pos.y);
     ofScale(size.x, size.y);
     sculpt.draw();
     ofPopMatrix();
-    
-     */
+    */
     
     ofPushMatrix();
-    ofTranslate(pos.x, pos.y);
+    ofTranslate(pos.x + 500, pos.y + 200);
     ofScale(size.x, size.y);
     c.draw();
     ofPopMatrix();

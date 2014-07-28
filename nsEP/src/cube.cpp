@@ -12,11 +12,11 @@ void cube::setup(){
 }
 
 //--------------------------------------------------------------
-void cube::update(float rotateSpeed){
+void cube::update(float rotateSpeed, float sineSpeed, float sineSize){
     
     rotate += rotateSpeed;
-    
-  
+    sine += sineSpeed;
+    sendSine = sineSize * sin(sineSpeed);
 }
 
 //--------------------------------------------------------------
@@ -30,7 +30,7 @@ void cube::draw(){
     ofRect(0, 0, 400, 300);
     ofPopMatrix();
     
-    drawCube(alternateColor, .75);
+    drawCube(alternateColor, .50);
     drawCube(ofColor::white, 3.0);
    
 
@@ -51,11 +51,11 @@ void cube::drawCube(ofColor c, float scale) {
     
     ofSetColor(c, alpha);
     ofFill();
-    ofDrawBox(50);
+    ofDrawBox(50 + sendSine);
     
     ofSetColor(ofColor::white);
     ofNoFill();
-    ofDrawBox(50);
+    ofDrawBox(50 + sendSine);
     
     ofPopMatrix();
     ofDisableAlphaBlending();
@@ -77,39 +77,3 @@ void cube::keyReleased(int key){
     
 }
 
-//--------------------------------------------------------------
-void cube::mouseMoved(int x, int y ){
-    
-    
-}
-
-//--------------------------------------------------------------
-void cube::mouseDragged(int x, int y, int button){
-    
-    
-}
-
-//--------------------------------------------------------------
-void cube::mousePressed(int x, int y, int button){
-    
-}
-
-//--------------------------------------------------------------
-void cube::mouseReleased(int x, int y, int button){
-    
-}
-
-//--------------------------------------------------------------
-void cube::windowResized(int w, int h){
-    
-}
-
-//--------------------------------------------------------------
-void cube::gotMessage(ofMessage msg){
-    
-}
-
-//--------------------------------------------------------------
-void cube::dragEvent(ofDragInfo dragInfo){ 
-    
-}
