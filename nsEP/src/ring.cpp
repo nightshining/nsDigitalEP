@@ -5,7 +5,7 @@
 void ring::setup(){
     
     //One Rect for background
-    rectPos.set(ofGetWidth() / 2, ofGetHeight() / 2);
+    rectPos.set(0, 0);
     
     vel.set(0.25f, 0.45f);
     noiseSpeed = 0.0f;

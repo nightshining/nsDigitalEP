@@ -5,7 +5,7 @@
 void bar::setup(){
     
     //One Rect for background
-    rectPos.set(ofGetWidth() / 2, ofGetHeight() / 2);
+    rectPos.set(0, 0);
     
     
     alpha = 0;

@@ -8,7 +8,9 @@ public:
     void setup();
     void reset();
     void draw();
+    void update();
     void cir(ofVec2f position, int radius, int alpha);
+    void newCir(int alpha, int size, ofColor c);
     
     void keyPressed(int key);
     void keyReleased(int key);
@@ -26,4 +28,7 @@ public:
     float radiusReact;
     ofPoint rectPos;
     ofColor altColor;
+    float sine, sendSine, sineSpeed;
+    vector<int> sendAlpha;
+    
 };

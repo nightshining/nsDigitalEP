@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>2E22C33B-C9D9-4223-8BFB-7376281B3213</string>
+	<string>4D4B6023-9DAB-4F3C-A257-634DBE825177</string>
 	<key>IDESourceControlProjectName</key>
 	<string>nsEP</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>7F2D87C0-1E66-4AE6-958D-32128960CA4E</key>
-		<string>https://github.com/nightshining/nsDigitalAbstractMix.git</string>
+		<key>5344AE06-1E39-4394-9AA4-B8E78DB7A233</key>
+		<string>https://github.com/nightshining/nsDigitalEP.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>nsEP/nsEP.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>7F2D87C0-1E66-4AE6-958D-32128960CA4E</key>
+		<key>5344AE06-1E39-4394-9AA4-B8E78DB7A233</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/nightshining/nsDigitalAbstractMix.git</string>
+	<string>https://github.com/nightshining/nsDigitalEP.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>7F2D87C0-1E66-4AE6-958D-32128960CA4E</string>
+	<string>5344AE06-1E39-4394-9AA4-B8E78DB7A233</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>7F2D87C0-1E66-4AE6-958D-32128960CA4E</string>
+			<string>5344AE06-1E39-4394-9AA4-B8E78DB7A233</string>
 			<key>IDESourceControlWCCName</key>
-			<string>nsDigitalAbstractMix</string>
+			<string>nsDigitalEP</string>
 		</dict>
 	</array>
 </dict>

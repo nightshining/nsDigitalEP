@@ -36,8 +36,9 @@ class testApp : public ofBaseApp{
     cube c; //use with last song
     
     ofVec2f size, pos;
-    
-    
+    ofVec2f sPos1, sPos2, sPos3, sPos4, sPos5, sPos6;
+    bool object1, object2, object3, object4, object5, object6;
+    float timeline;
     fftData audioReactiveData;
     
     //Text
