@@ -7,6 +7,7 @@
 #include "bar.h"
 #include "sculpture.h"
 #include "cube.h"
+#include "topography.h"
 
 #include "fftData.h"
 
@@ -34,6 +35,7 @@ class testApp : public ofBaseApp{
     bar b; //use with bass arp sounding song
     sculpture sculpt; //use with tribal sounding
     cube c; //use with last song
+    topography graph;
     
     ofVec2f size, pos;
     ofVec2f sPos1, sPos2, sPos3, sPos4, sPos5, sPos6;

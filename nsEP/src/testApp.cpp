@@ -15,6 +15,7 @@ void testApp::setup(){
     b.setup();
     sculpt.setup();
     c.setup();
+    graph.setup();
     }
     
     pos.set(ofGetWidth(), ofGetHeight());
@@ -106,6 +107,7 @@ void testApp::update(){
     
     cout << "Play Position: " << audioReactiveData.sound.getPosition() << endl;
 
+    graph.update();
 }
 
 //--------------------------------------------------------------
@@ -200,6 +202,8 @@ void testApp::draw(){
     audioReactiveData.showLength();
     audioReactiveData.songAnalyzer();
     
+    ofTranslate(ofGetWidth() / 2, ofGetHeight() / 2);
+    graph.draw();
     
 }
 
@@ -266,6 +270,7 @@ void testApp::keyPressed(int key){
         default:
             break;
     }
+    
     
 }
 

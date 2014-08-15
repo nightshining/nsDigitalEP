@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36F43687199C692C006ACDAF /* topography.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36F43685199C692C006ACDAF /* topography.cpp */; };
 		5C3A6F8D19639660008DA42F /* circles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5C3A6F8C19639660008DA42F /* circles.cpp */; };
 		5C6DE60719672341008CFBD5 /* bar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5C6DE60619672341008CFBD5 /* bar.cpp */; };
 		5C9AACD319662DFA000EA127 /* triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5C9AACD219662DFA000EA127 /* triangle.cpp */; };
@@ -67,6 +68,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		36F43685199C692C006ACDAF /* topography.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = topography.cpp; sourceTree = "<group>"; };
+		36F43686199C692C006ACDAF /* topography.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = topography.h; sourceTree = "<group>"; };
 		5C3A6F8C19639660008DA42F /* circles.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = circles.cpp; sourceTree = "<group>"; };
 		5C3A6F8E1963966A008DA42F /* circles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circles.h; sourceTree = "<group>"; };
 		5C6DE60619672341008CFBD5 /* bar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bar.cpp; sourceTree = "<group>"; };
@@ -238,6 +241,8 @@
 				5CE5D2F319686EA6009867AE /* sculpture.h */,
 				5CE5D2F419689B60009867AE /* cube.cpp */,
 				5CE5D2F619689B73009867AE /* cube.h */,
+				36F43685199C692C006ACDAF /* topography.cpp */,
+				36F43686199C692C006ACDAF /* topography.h */,
 			);
 			name = objects;
 			sourceTree = "<group>";
@@ -346,6 +351,7 @@
 				E693D0AF196F3A2500B1602B /* fftData.cpp in Sources */,
 				5C6DE60719672341008CFBD5 /* bar.cpp in Sources */,
 				5CE5D2F219686E99009867AE /* sculpture.cpp in Sources */,
+				36F43687199C692C006ACDAF /* topography.cpp in Sources */,
 				5CE5D2F519689B61009867AE /* cube.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
