@@ -62,8 +62,12 @@ void testApp::update(){
         cir.reset();        
     }
     
-    ///Ring///
+    ///Triangle///
+    tri.radius = ofMap(audioReactiveData.sendValue1, 0.0, 1.0, 0.0, 20.0);
+    tri.easing.x = ofMap(audioReactiveData.sendValue1, 0.0, 1.0, .50, 10.0);
+    tri.easing.y = ofMap(audioReactiveData.sendValue1, 0.0, 1.0, 1.0, 7.0);
     
+    ///Ring///
     r.noiseSpeed = ofMap(audioReactiveData.sendValue1, 0.0, 1.0, 0.0f, 0.50f);
     r.vel.x = audioReactiveData.sendValue1;
     r.vel.y = audioReactiveData.sendValue2;
@@ -88,7 +92,7 @@ void testApp::update(){
     
     ///Change Objects Based on Track
 
-    if (timeline == ofWrap(timeline, 0.00, 0.099)) {
+    if (timeline == ofWrap(timeline, 0.00, 0.0999)) {
         
         programNum[0] = true;
         
@@ -97,7 +101,7 @@ void testApp::update(){
         programNum[0] = false;
     }
     
-    if (timeline == ofWrap(timeline, 0.100, 0.219)) {
+    if (timeline == ofWrap(timeline, 0.100, 0.2189)) {
         
         programNum[1] = true;
         
@@ -107,7 +111,7 @@ void testApp::update(){
     }
     
     
-    if (timeline == ofWrap(timeline, .220, .318)) {
+    if (timeline == ofWrap(timeline, .219, .3189)) {
         
         programNum[2] = true;
     
@@ -116,7 +120,7 @@ void testApp::update(){
         programNum[2] = false;
     }
     
-    if (timeline == ofWrap(timeline, .319, .535)) {
+    if (timeline == ofWrap(timeline, .319, .5359)) {
         
         programNum[3] = true;
         
@@ -126,7 +130,7 @@ void testApp::update(){
     }
     
     
-    if (timeline == ofWrap(timeline, .536, .700)) {
+    if (timeline == ofWrap(timeline, .536, .7009)) {
         
         programNum[4] = true;
         

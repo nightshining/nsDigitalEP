@@ -22,4 +22,5 @@ public:
     ofTexture triangle;
     ofPoint rectPos;
     ofVec2f rotate, vel, easing;
+    float radius;
 };

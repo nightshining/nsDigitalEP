@@ -10,6 +10,7 @@ void triangle::setup(){
     rectPos.set(0, 0);
     
     vel.set(0.25f, 0.45f);
+    radius = 0.0;
 }
 
 //--------------------------------------------------------------
@@ -17,8 +18,7 @@ void triangle::update(){
     
     rotate += vel * easing;
     
-    easing.set(ofMap(ofGetMouseX(), 0, ofGetWidth(), 0.0, 2.50), ofMap(ofGetMouseY(), ofGetHeight(), 0, 0.0, 2.50));
-    
+  
     
 }
 
@@ -50,9 +50,9 @@ void triangle::draw(){
         ofSetCircleResolution(100);
         ofTranslate(rectPos);
         ofSetColor(ofColor::black, 200);
-        ofCircle(0, 0, 20);
+        ofCircle(0, 0, 20 + radius);
         ofSetColor(ofColor::white, 200);
-        ofCircle(0, 0, 5);
+        ofCircle(0, 0, 5 + radius);
         
         
         } ofPopMatrix();
