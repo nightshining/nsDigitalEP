@@ -14,7 +14,6 @@ void testApp::setup(){
     r.setup();
     b.setup();
     sculpt.setup();
-    c.setup();
     graph.setup();
     }
     
@@ -22,6 +21,13 @@ void testApp::setup(){
     //size.set(1.0, 1.0);
     
     font.loadFont("font/codeFont.otf", 48);
+
+    int totalTracks = 6;
+    programNum.resize(totalTracks);
+    
+    for (int i = 0; i < programNum.size(); i++) {
+        programNum[i] = false;
+    }
     
 }
 
@@ -72,42 +78,74 @@ void testApp::update(){
     sculpt.update(ofMap(audioReactiveData.sendValue1, 0.0, 1.0, 0.0f, 4.0f));
     sculpt.alpha = ofMap(audioReactiveData.sendValue1, 0.0, 1.0, 0, 255);
  
-    
-    ///Cube///
-    c.update(ofMap(audioReactiveData.sendValue1, 0.0, 1.0, 0.0f, 4.0f), ofMap(audioReactiveData.sendValue1, 0.0, 1.0, 0.0f, 4.0f), 10.0);
-    c.alpha = ofMap(audioReactiveData.sendValue1, 0.0, 1.0, -100, 255);
-    
+    ///Topo///
+    graph.update();
+
     
     timeline = audioReactiveData.sound.getPosition();
     
-    if (timeline < .2) {
-        object1 = true;
-    }
-    if (timeline > .2) {
-        object1 = false;
-        object2 = true;
-    }
-    if (timeline > .5) {
-        object2 = false;
-        object3 = true;
-    }
-    if (timeline > .7) {
-        object3 = false;
-        object4 = true;
-    }
-    if (timeline > .8) {
-        object4 = false;
-        object5 = true;
-    }
-    if (timeline > .9) {
-        object5 = false;
-        object6 = true;
-    }
+   
     
-    
-    cout << "Play Position: " << audioReactiveData.sound.getPosition() << endl;
+    ///Change Objects Based on Track
 
-    graph.update();
+    if (timeline == ofWrap(timeline, 0.00, 0.099)) {
+        
+        programNum[0] = true;
+        
+    } else {
+        
+        programNum[0] = false;
+    }
+    
+    if (timeline == ofWrap(timeline, 0.100, 0.219)) {
+        
+        programNum[1] = true;
+        
+    } else {
+        
+        programNum[1] = false;
+    }
+    
+    
+    if (timeline == ofWrap(timeline, .220, .318)) {
+        
+        programNum[2] = true;
+    
+    } else {
+        
+        programNum[2] = false;
+    }
+    
+    if (timeline == ofWrap(timeline, .319, .535)) {
+        
+        programNum[3] = true;
+        
+    } else {
+        
+        programNum[3] = false;
+    }
+    
+    
+    if (timeline == ofWrap(timeline, .536, .700)) {
+        
+        programNum[4] = true;
+        
+    } else {
+        
+        programNum[4] = false;
+    }
+    
+    if (timeline == ofWrap(timeline, .701, 1.0)) {
+        
+        programNum[5] = true;
+        
+    } else {
+        
+        programNum[5] = false;
+    }
+
+     
+
 }
 
 //--------------------------------------------------------------
@@ -136,65 +174,54 @@ void testApp::draw(){
     ofPushMatrix();
     
         {
+            
     ofScale(size.x, size.y);
             
-            ofTranslate(ofGetWidth() / 2, ofGetHeight() / 2);
-            
-    if (object1 == true) {
-                
-
+    ofTranslate(ofGetWidth() / 2, ofGetHeight() / 2);
+                        
+    if(programNum[5] == true) {
     ofPushMatrix();
     ofTranslate(pos.x * .10, pos.y * .25);
     cir.draw();
     ofPopMatrix();
-    
     }
-    
-    if (object2 == true) {
-
+                
+    if(programNum[1] == true) {
     ofPushMatrix();
     ofTranslate(pos.x * .50, pos.y * .25);
     tri.draw();
     ofPopMatrix();
-     
-    }
+            }
+        
     
-    if (object3 == true) {
-
+    if(programNum[2] == true) {
     ofPushMatrix();
     ofTranslate(pos.x * .90, pos.y * .25);
     r.draw();
     ofPopMatrix();
-    
     }
     
-    if (object4 == true) {
-
+    if(programNum[3] == true) {   
     ofPushMatrix();
     ofTranslate(pos.x * .10, pos.y * .80);
     b.draw();
     ofPopMatrix();
-     
     }
-    
-    if (object5 == true) {
-
+             
+    if(programNum[4] == true) {
     ofPushMatrix();
     ofTranslate(pos.x * .50, pos.y * .80);
     sculpt.draw();
     ofPopMatrix();
-    
     }
     
-    if (object6 == true) {
-
+    if (programNum[0] == true) {  
     ofPushMatrix();
     ofTranslate(pos.x * .90, pos.y * .80);
-    c.draw();
+    graph.draw();
     ofPopMatrix();
-    
-    }
-            
+             
+            }
         }
     ofPopMatrix();
     
@@ -202,9 +229,10 @@ void testApp::draw(){
     audioReactiveData.showLength();
     audioReactiveData.songAnalyzer();
     
-    ofTranslate(ofGetWidth() / 2, ofGetHeight() / 2);
-    graph.draw();
+    ofSetColor(ofColor::black);
+    ofDrawBitmapString("Position:" + ofToString(timeline), 400, 100);
     
+   
 }
 
 //--------------------------------------------------------------
@@ -234,42 +262,15 @@ void testApp::keyPressed(int key){
         sPos4.set(.10, .80);
         sPos5.set(.50, .80);
         sPos6.set(.90, .80);
-        
-        object1 = false;
-        object2 = false;
-        object3 = false;
-        object4 = false;
-        object5 = false;
-        object6 = false;
+     
         
     
     }
     
     audioReactiveData.selectBand(key);
     
-    switch (key) {
-        case '1':
-            object1 = true;
-            break;
-        case '2':
-            object2 = true;
-            break;
-        case '3':
-            object3 = true;
-            break;
-        case '4':
-            object4 = true;
-            break;
-        case '5':
-            object5 = true;
-            break;
-        case '6':
-            object6 = true;
-            break;
-            
-        default:
-            break;
-    }
+    //0.0 0.99
+
     
     
 }

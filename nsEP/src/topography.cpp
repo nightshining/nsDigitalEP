@@ -10,22 +10,20 @@ void topography::setup() {
     alternateColor.set(250, 0, 90);
     alpha = 255;
     
-    int pointSize = 10;
     
-    points.resize(pointSize);
+        
     
-    for (int i = 0; i < points.size(); i++) {
-        
-        points[i].set(ofRandom(500), ofRandom(500));
-        
-    }
 }
 
 //--------------------------------------------------------------
 void topography::update() {
     
-
-   
+    rotate += 0.005f;
+    
+    sine += 0.005f;
+    sendSine = 15.0 * sin(sine);
+    
+    
 }
 
 //--------------------------------------------------------------
@@ -35,32 +33,48 @@ void topography::draw(){
     ofSetRectMode(OF_RECTMODE_CENTER);
     ofSetColor(ofColor::black);
     ofTranslate(rectPos);
-    ofScale(1.0, 1.0);
     ofRect(0, 0, 400, 300);
     ofPopMatrix();
    
     
-    for (int i = 0; i < points.size(); i++) {
+    
+    
+    for (int i = 0; i < 30; i++) {
+        
+        ofPushStyle();
 
-    ofPushStyle();
-    ofPushMatrix();
-    
-    ofSetColor(alternateColor);
-        ofBeginShape();
-        ofCurveVertex(points[i].x, points[i].y);
+        ofPushMatrix();
+        ofSetCircleResolution(100);
+        ofRotateX(sendSine * i);
+        //ofRotateY(sendSine * ofMap(i, 0, 25, 0.0, TWO_PI * 10));
+        //ofRotateY(sendSine * i);
 
-        ofEndShape();
-    
-    
-    ofPopMatrix();
-    ofPopStyle();
-    
+        ofSetColor(alternateColor, ofMap(i, 0, 30, 175, 70));
+        ofNoFill();
+        ofCircle(rectPos.x, rectPos.y, i * 3, i * 3);
+        //ofSetColor(alternateColor, ofMap(i, 0, 10, 50, 100));
+        //ofFill();
+        //ofCircle(rectPos.x, rectPos.y, i * 3, i * 3);
+        ofPopMatrix();
+        
+        
+        ofPushMatrix();
+        ofRotateX(-sendSine * i);
+       // ofRotateY(-sendSine * i);
+
+        ofSetColor(ofColor::white, ofMap(i, 0, 30, 175, 70));
+        ofNoFill();
+        ofCircle(rectPos.x, rectPos.y, i * 3, i * 3);
+        //ofSetColor(alternateColor, ofMap(i, 0, 10, 50, 100));
+        //ofFill();
+        //ofCircle(rectPos.x, rectPos.y, i * 3, i * 3);
+        ofPopMatrix();
+        ofPopStyle();
+
+        
     }
     
 }
-
-
-
 
 //--------------------------------------------------------------
 void topography::keyPressed(int key){

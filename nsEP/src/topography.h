@@ -16,5 +16,6 @@ public:
     ofColor alternateColor;
     int alpha;
     float rotate, sine, sendSine;
-    vector<ofVec2f> points;
+    
+    void showShape(int rotation, ofColor c);
 };
