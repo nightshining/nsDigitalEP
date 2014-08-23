@@ -176,7 +176,11 @@ void testApp::draw(){
     
     ///Title Text///
     ofPushStyle(); 
-    ofPushMatrix(); 
+    ofPushMatrix();
+    ofSetCircleResolution(4);
+    ofSetColor(ofColor::whiteSmoke);
+    ofFill();
+    ofCircle(ofGetWidth() * 0.06, ofGetHeight() * 0.12, 50);
     ofSetColor(ofColor::black);
     ofNoFill();
     font.drawString("ns", ofGetWidth() * 0.03, ofGetHeight() * 0.15);
