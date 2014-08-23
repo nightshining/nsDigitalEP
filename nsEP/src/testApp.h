@@ -45,5 +45,5 @@ class testApp : public ofBaseApp{
     
     //Text
     ofTrueTypeFont font;
-    track trackTitle;
+    vector<track> trackTitle;
 };

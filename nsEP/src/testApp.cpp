@@ -25,11 +25,20 @@ void testApp::setup(){
     int totalTracks = 6;
     programNum.resize(totalTracks);
     
+    float textPosLeft = ofGetWidth() * 0.05;
+    
     for (int i = 0; i < programNum.size(); i++) {
         programNum[i] = false;
     }
     
-    trackTitle.setup(50, 50);
+    trackTitle.resize(totalTracks);
+    trackTitle[0].setup(textPosLeft, ofGetHeight() * .25, 1.10);
+    trackTitle[1].setup(textPosLeft, ofGetHeight() * .30, 1.09);
+    trackTitle[2].setup(textPosLeft, ofGetHeight() * .35, 1.08);
+    trackTitle[3].setup(textPosLeft, ofGetHeight() * .40, 1.07);
+    trackTitle[4].setup(textPosLeft, ofGetHeight() * .45, 1.06);
+    trackTitle[5].setup(textPosLeft, ofGetHeight() * .50, 1.05);
+
     
 }
 
@@ -150,8 +159,16 @@ void testApp::update(){
         programNum[5] = false;
     }
 
-    trackTitle.update();
+    for (int i = 0; i < trackTitle.size(); i++) {
+        
+    trackTitle[i].update();
+        
+    }
+    
+ 
 
+    
+    
 }
 
 //--------------------------------------------------------------
@@ -235,11 +252,12 @@ void testApp::draw(){
     audioReactiveData.showLength();
     audioReactiveData.songAnalyzer();
     
-    ofSetColor(ofColor::black);
-    ofDrawBitmapString("Position:" + ofToString(timeline), 400, 100);
-    
-    trackTitle.draw("Track 1");
-   
+    //DEBUG TIME 
+    //ofSetColor(ofColor::black);
+    //ofDrawBitmapString("Position:" + ofToString(timeline), 400, 100);
+    for (int i = 0; i < trackTitle.size(); i++) {
+        trackTitle[i].draw("Track" + ofToString(i));
+    }
 }
 
 //--------------------------------------------------------------
@@ -290,8 +308,10 @@ void testApp::keyReleased(int key){
 //--------------------------------------------------------------
 void testApp::mouseMoved(int x, int y ){
 
-    audioReactiveData.sound.setPosition(ofMap(x, 0, ofGetWidth(), 0.0, 1.0));
-    trackTitle.mouseMoved(x, y);
+    
+    for (int i = 0; i < trackTitle.size(); i++) {
+    trackTitle[i].mouseMoved(x, y);
+    }
 }
 
 //--------------------------------------------------------------
@@ -301,12 +321,46 @@ void testApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button){
+    
+    for (int i = 0; i < trackTitle.size(); i++) {
+        trackTitle[i].mousePressed(x, y);
+    }
+    
+    if (trackTitle[0].trackToggle == true) {
+    audioReactiveData.sound.setPosition(0.0);
+   
+    }
+    
+    else if (trackTitle[1].trackToggle == true) {
+        audioReactiveData.sound.setPosition(0.100);
 
+    } 
+    else if (trackTitle[2].trackToggle == true) {
+        audioReactiveData.sound.setPosition(0.219);
+
+    }
+    else if (trackTitle[3].trackToggle == true) {
+        audioReactiveData.sound.setPosition(0.319);
+
+    }
+    else if (trackTitle[4].trackToggle == true) {
+        audioReactiveData.sound.setPosition(0.536);
+
+    }
+    else if (trackTitle[5].trackToggle == true) {
+        audioReactiveData.sound.setPosition(0.701);
+
+    }
+    
+    
 }
 
 //--------------------------------------------------------------
 void testApp::mouseReleased(int x, int y, int button){
-
+    
+    for (int i = 0; i < trackTitle.size(); i++) {
+        trackTitle[i].mouseReleased(x, y);
+    }
 }
 
 //--------------------------------------------------------------

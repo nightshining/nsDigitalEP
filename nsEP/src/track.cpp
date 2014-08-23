@@ -1,32 +1,23 @@
 #include "track.h"
 
 //--------------------------------------------------------------
-void track::setup(int posX, int posY){
+void track::setup(int posX, int posY, float textPos){
     
-    rectW = 50;
-    rectH = 20;
-    clickPos.set(posX, posY);
-    clickPad.setFromCenter(clickPos, rectW, rectH);
+    rectW = 75;
+    rectH = 25;
+    //clickPos.set(posX, posY);
+    clickPad.set(posX, posY, rectW, rectH);
     altColor.set(250, 0, 90);
     alpha = 0;
-    alphaOn = false;
     trackFont.loadFont("font/codeFont.otf", 12);
-
-
+    textDrawPercent = textPos;
+    trackToggle = false;
 }
 
 //--------------------------------------------------------------
 void track::update(){
-       
-    if (alphaOn) {
-        alpha += 5;
-    } else if (!alphaOn) {
-        alpha = 0;
-    }
     
-    if (alpha >= 255) {
-        alpha = 255;
-    }
+   
 }
 
 //--------------------------------------------------------------
@@ -34,19 +25,14 @@ void track::draw(string trackTitle){
     
     ofPushStyle(); 
     ofPushMatrix(); 
-    ofSetRectMode(OF_RECTMODE_CENTER);
-    ofSetColor(0, 0, 0, alpha);
-    ofTranslate(clickPos);
-    
-    ofRect(0, 0, rectW, rectH);
-    ofPopMatrix();
-    ofPopStyle();
-   
-    ofPushStyle(); 
-    ofPushMatrix(); 
-    ofSetColor(altColor);
-    ofTranslate(clickPos);
 
+    ofSetRectMode(OF_RECTMODE_CORNER);
+    ofSetColor(0, 0, 0, alpha);    
+    ofRect(clickPad);
+   
+    ofTranslate(clickPad.getPosition() * textDrawPercent);
+    ofSetColor(altColor);
+   
     trackFont.drawString(trackTitle, 0, 0);
     
     ofPopMatrix();
@@ -60,23 +46,36 @@ void track::mouseMoved(int x, int y ){
     ofVec2f mousePos;
     mousePos.set(x, y);
 if (clickPad.inside(mousePos)) {
-    alphaOn = true;
-    altColor.set(250, 0, 90, alpha);
-
+    altColor.set(250, 0, 90);
+    alpha = 255;
+    
     
 } else {
-    alphaOn = false;
     altColor.set(0);
+    alpha = 0;
 }
     
 }
 //--------------------------------------------------------------
-void track::mousePressed(int x, int y, int button){
+void track::mousePressed(int x, int y){
     
+    
+    ofVec2f mousePos;
+    mousePos.set(x, y);
+    if (clickPad.inside(mousePos)) {
+        altColor.set(ofColor::white);
+        trackToggle = true;
+    } 
 }
 
 //--------------------------------------------------------------
-void track::mouseReleased(int x, int y, int button){
+void track::mouseReleased(int x, int y){
     
+    ofVec2f mousePos;
+    mousePos.set(x, y);
+    if (clickPad.inside(mousePos)) {
+        altColor.set(250, 0, 90);
+        trackToggle = false;
+    } 
 }
 
