@@ -10,7 +10,7 @@
 #include "topography.h"
 
 #include "fftData.h"
-
+#include "track.h"
 
 class testApp : public ofBaseApp{
 
@@ -45,4 +45,5 @@ class testApp : public ofBaseApp{
     
     //Text
     ofTrueTypeFont font;
+    track trackTitle;
 };

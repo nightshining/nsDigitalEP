@@ -29,6 +29,8 @@ void testApp::setup(){
         programNum[i] = false;
     }
     
+    trackTitle.setup(50, 50);
+    
 }
 
 //--------------------------------------------------------------
@@ -148,7 +150,7 @@ void testApp::update(){
         programNum[5] = false;
     }
 
-     
+    trackTitle.update();
 
 }
 
@@ -236,6 +238,7 @@ void testApp::draw(){
     ofSetColor(ofColor::black);
     ofDrawBitmapString("Position:" + ofToString(timeline), 400, 100);
     
+    trackTitle.draw("Track 1");
    
 }
 
@@ -288,7 +291,7 @@ void testApp::keyReleased(int key){
 void testApp::mouseMoved(int x, int y ){
 
     audioReactiveData.sound.setPosition(ofMap(x, 0, ofGetWidth(), 0.0, 1.0));
-    
+    trackTitle.mouseMoved(x, y);
 }
 
 //--------------------------------------------------------------

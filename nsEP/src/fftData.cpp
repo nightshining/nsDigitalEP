@@ -24,7 +24,7 @@ void fftData::setup(){
     
     //Analyzer
     altColor.set(250, 0, 90);
-    barPos.set(50, ofGetHeight() - 100);
+    barPos.set(ofGetWidth() * .05, ofGetHeight() * .80);
     
 }
 
