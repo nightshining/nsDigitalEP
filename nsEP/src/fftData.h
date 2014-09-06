@@ -26,4 +26,7 @@ public:
     
     void songAnalyzer();
     
+    //samples
+    ofSoundPlayer drum1, drum2, bass1, bass2, pad, keys;
+    
 };

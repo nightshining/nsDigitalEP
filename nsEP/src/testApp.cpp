@@ -31,6 +31,7 @@ void testApp::setup(){
         programNum[i] = false;
     }
     
+    
     trackTitle.resize(totalTracks);
     trackTitle[0].setup(textPosLeft, ofGetHeight() * .25, 1.10);
     trackTitle[1].setup(textPosLeft, ofGetHeight() * .30, 1.09);
@@ -38,7 +39,20 @@ void testApp::setup(){
     trackTitle[3].setup(textPosLeft, ofGetHeight() * .40, 1.07);
     trackTitle[4].setup(textPosLeft, ofGetHeight() * .45, 1.06);
     trackTitle[5].setup(textPosLeft, ofGetHeight() * .50, 1.05);
-
+    
+    //setup
+    audioReactiveData.sound.play();
+    audioReactiveData.sound.setPosition(0.0);
+    
+    
+    size.set(1.0, 1.0);
+    pos.set(0, 0);
+    sPos1.set(0, 0);
+    sPos2.set(0, 0);
+    sPos3.set(0, 0);
+    sPos4.set(0, 0);
+    sPos5.set(0, 0);
+    sPos6.set(0, 0);
     
 }
 
@@ -103,6 +117,9 @@ void testApp::update(){
     
     ///Change Objects Based on Track
 
+    if (audioReactiveData.sound.getIsPlaying()) {
+        
+    
     if (timeline == ofWrap(timeline, 0.00, 0.0999)) {
         
         programNum[0] = true;
@@ -165,7 +182,7 @@ void testApp::update(){
         
     }
     
- 
+        }
 
     
     
@@ -270,6 +287,11 @@ void testApp::keyPressed(int key){
     cir.keyPressed(key);
     
     if (key == '1') {
+        
+        audioReactiveData.sound.play();
+        audioReactiveData.sound.setPosition(0.0);
+      
+        
         size.set(1.0, 1.0);
         pos.set(0, 0);
         sPos1.set(0, 0);
@@ -281,6 +303,14 @@ void testApp::keyPressed(int key){
         
         
     } else if (key == '2') {
+        
+        audioReactiveData.sound.stop();
+        audioReactiveData.sound.setPosition(0.0);
+        
+        for (int i = 0; i < programNum.size(); i++) {
+            programNum[i] = true;
+        }
+        
         pos.set(ofGetWidth(), ofGetHeight());
 
         size.set(.50, .50);
@@ -300,6 +330,49 @@ void testApp::keyPressed(int key){
     
     //0.0 0.99
 
+    if (!audioReactiveData.sound.getIsPlaying()) {
+        
+        switch (key) {
+            case 'a':
+                audioReactiveData.drum1.play();
+                break;
+            
+            case 's':
+                audioReactiveData.drum2.play();
+                break;
+            
+            case 'd':
+                audioReactiveData.bass1.play();
+                break;
+            
+            case 'j':
+                audioReactiveData.bass2.play();
+                break;
+                
+            case 'k':                
+                audioReactiveData.pad.play();
+                break;
+                
+            case 'l':
+                audioReactiveData.keys.play();
+                break;
+                
+            default:
+                break;
+        } 
+        
+        
+    } else {
+        
+        audioReactiveData.drum1.stop();
+        audioReactiveData.drum2.stop();
+        audioReactiveData.bass1.stop();
+        audioReactiveData.bass2.stop();
+        audioReactiveData.pad.stop();
+        audioReactiveData.keys.stop();
+        
+    }
+    
     
     
 }

@@ -26,6 +26,14 @@ void fftData::setup(){
     altColor.set(250, 0, 90);
     barPos.set(ofGetWidth() * .05, ofGetHeight() * .80);
     
+    drum1.loadSound("samples/sample4.mp3");
+    drum2.loadSound("samples/sample3.mp3");
+    bass1.loadSound("samples/sample1.mp3");
+    bass2.loadSound("samples/sample2.mp3");
+    pad.loadSound("samples/sample0.mp3");
+    keys.loadSound("samples/sample5.mp3");
+    
+   
 }
 
 //--------------------------------------------------------------
