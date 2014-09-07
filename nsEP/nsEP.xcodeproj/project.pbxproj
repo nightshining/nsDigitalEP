@@ -75,6 +75,7 @@
 		5C3A6F8E1963966A008DA42F /* circles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circles.h; sourceTree = "<group>"; };
 		5C6DE60619672341008CFBD5 /* bar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bar.cpp; sourceTree = "<group>"; };
 		5C6DE6081967235A008CFBD5 /* bar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bar.h; sourceTree = "<group>"; };
+		5C85F10819BC872B00E578DB /* nsIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = nsIcon.icns; path = bin/data/nsIcon.icns; sourceTree = "<group>"; };
 		5C9AACD219662DFA000EA127 /* triangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = triangle.cpp; sourceTree = "<group>"; };
 		5C9AACD419662E75000EA127 /* triangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = triangle.h; sourceTree = "<group>"; };
 		5CAD506719A82F1500BC957F /* track.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = track.cpp; sourceTree = "<group>"; };
@@ -198,6 +199,7 @@
 		E4B69B4A0A3A1720003C02F2 = {
 			isa = PBXGroup;
 			children = (
+				5C85F10819BC872B00E578DB /* nsIcon.icns */,
 				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
 				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
 				E4B69E1C0A3A1BDC003C02F2 /* src */,
