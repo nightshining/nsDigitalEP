@@ -7,7 +7,7 @@ void topography::setup() {
     //One Rect for background
     rectPos.set(0, 0);
     
-    alternateColor.set(250, 0, 90);
+    alternateColor.set(0, 200, 150);
     alpha = 255;
     
     

@@ -60,7 +60,7 @@ void ring::draw(){
                 ofScale(sendNoise, sendNoise);
                 ofRotateY(rotate.x + i * PI / 2 );
                 ofRotateX(rotate.y);
-                ofSetColor(250, 0, 90, i);
+                ofSetColor(0, 200, 150, i);
                 ofNoFill();
                 ofCircle(0, 0, 10);
                 

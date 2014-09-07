@@ -7,7 +7,7 @@ void track::setup(int posX, int posY, float textPos){
     rectH = 25;
     //clickPos.set(posX, posY);
     clickPad.set(posX, posY, rectW, rectH);
-    altColor.set(250, 0, 90);
+    altColor.set(0, 200, 150);
     alpha = 0;
     trackFont.loadFont("font/codeFont.otf", 12);
     textDrawPercent = textPos;
@@ -46,7 +46,7 @@ void track::mouseMoved(int x, int y ){
     ofVec2f mousePos;
     mousePos.set(x, y);
 if (clickPad.inside(mousePos)) {
-    altColor.set(250, 0, 90);
+    altColor.set(0, 200, 150);
     alpha = 255;
     
     
@@ -74,7 +74,7 @@ void track::mouseReleased(int x, int y){
     ofVec2f mousePos;
     mousePos.set(x, y);
     if (clickPad.inside(mousePos)) {
-        altColor.set(250, 0, 90);
+        altColor.set(0, 200, 150);
         trackToggle = false;
     } 
 }

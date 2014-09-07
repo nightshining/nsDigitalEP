@@ -9,18 +9,22 @@ void testApp::setup(){
     audioReactiveData.setup();
     
     if (audioReactiveData.sound.isLoaded()) {
+        
     cir.setup();
     tri.setup();
     r.setup();
     b.setup();
     sculpt.setup();
     graph.setup();
+        
     }
     
     pos.set(ofGetWidth(), ofGetHeight());
     //size.set(1.0, 1.0);
     
     font.loadFont("font/codeFont.otf", 48);
+    keyFont.loadFont("font/codeFont.otf", 10);
+    sampleKeyOn = false;
 
     int totalTracks = 6;
     programNum.resize(totalTracks);
@@ -279,6 +283,9 @@ void testApp::draw(){
     for (int i = 0; i < trackTitle.size(); i++) {
         trackTitle[i].draw("Track" + ofToString(i));
     }
+    
+    sampleKeys();
+
 }
 
 //--------------------------------------------------------------
@@ -361,6 +368,7 @@ void testApp::keyPressed(int key){
                 break;
         } 
         
+        sampleKeyOn = true;
         
     } else {
         
@@ -371,6 +379,7 @@ void testApp::keyPressed(int key){
         audioReactiveData.pad.stop();
         audioReactiveData.keys.stop();
         
+        sampleKeyOn = false;
     }
     
     
@@ -445,12 +454,29 @@ void testApp::windowResized(int w, int h){
 
 }
 
-//--------------------------------------------------------------
-void testApp::gotMessage(ofMessage msg){
+void testApp::sampleKeys() {
+    
+    if (sampleKeyOn) {
 
+    ofPushStyle();
+    ofPushMatrix();
+    ofTranslate(ofGetWidth() * .70, ofGetHeight() * .85);
+    ofSetColor(ofColor::black);
+    keyFont.drawString("Play Sounds: 'a' 's' 'd' 'j' 'k' 'l'", 0, 0);
+    
+    ofPopMatrix();
+    ofPopStyle();
+    } else {
+    ofPushStyle();
+    ofPushMatrix();
+    ofTranslate(ofGetWidth() * .70, ofGetHeight() * .85);
+    ofSetColor(ofColor::black);
+    keyFont.drawString("Mode Listen '1' :: Mode Play '2'", 0, 0);
+
+    ofPopMatrix();
+    ofPopStyle();
+    }
+    
 }
 
-//--------------------------------------------------------------
-void testApp::dragEvent(ofDragInfo dragInfo){ 
 
-}

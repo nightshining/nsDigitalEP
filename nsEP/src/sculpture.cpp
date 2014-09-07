@@ -49,7 +49,7 @@ void sculpture::draw(){
                     
                     if (i == 50) {
                         
-                        ofSetColor(250, 0, 90, alpha);
+                        ofSetColor(0, 200, 150, alpha);
 
                     } else {
                     

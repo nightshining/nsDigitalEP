@@ -26,7 +26,7 @@ void circles::setup(){
     //alpha[i] = ofRandom(0, 255);
     //}
     
-    altColor.set(250, 0, 90);
+    altColor.set(0, 200, 150);
     radiusReact = 0;
     
     int totalCircles = 3;

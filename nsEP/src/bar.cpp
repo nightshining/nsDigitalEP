@@ -46,7 +46,7 @@ void bar::draw(){
         ofPushMatrix(); {
         
             if (i == 120 && j == 60) {
-                ofSetColor(250, 0, 90);
+                ofSetColor(0, 200, 150);
 
             } else {
                 ofSetColor(ofColor::white, alpha);
@@ -60,7 +60,7 @@ void bar::draw(){
             
             
             if (i == 120 && j == 60) {
-                ofSetColor(250, 0, 90);
+                ofSetColor(0, 200, 150);
                 
             } else {
                 ofSetColor(ofColor::white);

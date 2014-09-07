@@ -23,7 +23,7 @@ void fftData::setup(){
     cycleSpectrum = 0;
     
     //Analyzer
-    altColor.set(250, 0, 90);
+    altColor.set(0, 200, 150); // 250, 0, 90
     barPos.set(ofGetWidth() * .05, ofGetHeight() * .80);
     
     drum1.loadSound("samples/sample4.mp3");

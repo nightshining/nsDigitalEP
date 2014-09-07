@@ -36,7 +36,7 @@ void triangle::draw(){
     ofPushStyle(); {
         ofPushMatrix(); {
         
-        ofSetColor(250, 0, 90,  200);
+        ofSetColor(0, 200, 150,  200);
         ofTranslate(rectPos);
         ofRotateX(rotate.x);
         ofRotateY(rotate.y);
